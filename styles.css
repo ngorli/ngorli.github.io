@@ -15,7 +15,7 @@ body {
 }
 
 header {
-    background: #6699ff;
+    background: #3366cc;
     color: #fff;
     padding: 10px 0;
 }
@@ -44,8 +44,28 @@ main {
 }
 
 footer {
-    background: #6699ff;
+    background: #3366cc;
     color: #fff;
     text-align: center;
     padding: 10px 0;
+}
+
+.content {
+    display: flex;
+    flex-direction: row;
+}
+
+.text {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.image {
+    flex: 1;
+}
+
+/* Adjust this width as needed */
+.image img {
+    width: 100%;
+    height: auto;
 }
