@@ -56,7 +56,7 @@ footer {
     padding: 10px 0;
 }
 
-.content {
+.home-content {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -93,15 +93,15 @@ footer {
     font-weight: bold;
 }
 
-.content {
+.resume-content {
     margin-top: 20px;
 }
 
-.institution, .job {
+.institution, .job, .skill {
     margin-bottom: 20px;
 }
 
-.institution h3, .job h3 {
+.institution h3, .job h3, .skill h3 {
     margin-bottom: 5px;
     font-weight: bold;
 }
