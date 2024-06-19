@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ngorli Paintsil</title>
+    <title>Internship Project - Tensile Strength Testing</title>
     <link rel="stylesheet" href="../styles.css">
     <link rel="icon" href="../images/favicon.png" type="image/x-icon">
 </head>
@@ -25,8 +25,78 @@
     <main>
         <section class="content">
             <div class="text">
-                <h2>Tensile Testing</h2>
-                <p>text here</p>
+                <p>In my 2023 summer internship at Cruise, my main internship project was to 
+                    conduct tensile strength testing for different assemblies of materials, inserts and 
+                    screws. For this project, I was to test two different materials, two different inserts 
+                    and a control tapped hole, two different insert depths, and two different screw 
+                    lengths. To conduct these tests, I would be using an Intron machine to pull on the 
+                    assembly until failure. The project consisted of the following phases:
+                </p>
+                <ul>
+                    <li>
+                        <b>Test Design</b>
+                        <ul>
+                            <li>First I had to decide how I wanted to run my tests. For each of the 
+                                configurations I ran 5 tests of each. Each material would be a small cube, 
+                                with the insert installed into one face, and the screw screwed into the 
+                                insert. From there, each of these assemblies would need to be held in 
+                                place, with the screw attached to the Intron machine so they could be 
+                                pulled apart. However, the screws would not easily interface with the head 
+                                of the Intron machine, and some fixture would also be needed to hold the 
+                                assembly in place. This leads to the next part of my project, designing the 
+                                test fixtures.
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <b>Test Fixture Design</b>
+                        <ul>
+                            <li>My first step for designing my test fixtures was to get measurements of all 
+                                the relevant parts of the machine and start making some sketches. Then, I 
+                                worked on designing models in CAD and iterated on those designs with 
+                                feedback from my team until I settled on a final design. Once I had 
+                                designed my test fixtures I created dimensioned engineering drawings of 
+                                the test fixtures and sent those to the in-house machine shop to have 
+                                them manufactured for my testing.
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <b>Test Simulations</b>
+                        <ul>
+                            <li>Once I had designed parts, I decided to run FEA simulations of the parts 
+                                to know if they were both resilient enough for my tests and to get an idea 
+                                of how my samples would perform when I run my tests.
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <b>Running the Tests</b>
+                        <ul>
+                            <li>Once I had all of my test fixtures and I had ordered all of the materials 
+                                needed for my test samples, I then began to run my tests. I set up each 
+                                test with the machine and increased the force, recording test data as I 
+                                went.
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <b>Data Analysis</b>
+                        <ul>
+                            <li>The machine output all of the test data as csv files, sampling force and 
+                                displacement every two milliseconds. In each of these files, there were 
+                                tens of thousands of samples, resulting in an overwhelming amount of 
+                                data to be analyzed. To speed up this process, I decided to write a Python 
+                                script to automate my data analysis. I imported NumPy to parse the csv 
+                                files and then wrote code to get the average maximum force for each set 
+                                of tests for each configuration.
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <p>Below are images of the test fixtures that I designed, the machine that the fixtures 
+                    were designed for, and some of the test samples.
+                </p>
             </div>
         </section>
     </main>

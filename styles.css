@@ -121,3 +121,16 @@ footer {
 .job ul li {
     margin-bottom: 5px;
 }
+
+/* New CSS for nested lists */
+.text ul {
+    list-style-type: disc;
+    margin-left: 20px;
+    padding-left: 20px;
+}
+
+.text ul ul {
+    list-style-type: circle;
+    margin-left: 20px;
+    padding-left: 20px;
+}
