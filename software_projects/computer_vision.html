@@ -27,6 +27,7 @@
             <div class="text">
                 <h2>Computer Vision: Album Cover Genre Classification</h2>
                 <ul>
+                    <b><a href="software_projects/computer_vision.html">Click here to read the full paper.</a></b>
                     <li>
                         <b>Introduction</b>
                         <ul>
@@ -46,18 +47,128 @@
                         </ul>
                     </li>
                     <li>
-                        <b>Test Fixture Design</b>
+                        <b>Problem Statement</b>
                         <ul>
-                            <li>My first step for designing my test fixtures was to get measurements of all 
-                                the relevant parts of the machine and start making some sketches. Then, I 
-                                worked on designing models in CAD and iterated on those designs with 
-                                feedback from my team until I settled on a final design. Once I had 
-                                designed my test fixtures I created dimensioned engineering drawings of 
-                                the test fixtures and sent those to the in-house machine shop to have 
-                                them manufactured for my testing.
+                            <li><b>Problem:</b> Given only an album cover, a softmax percentage 
+                                weighting is output, predicting the corresponding single-label 
+                                genre through using DenseNet and Vision Transformer models.
+                            </li>
+                            <li>
+                                <b>Metrics:</b>
+                                <li>
+                                    Accuracy: Enables comparison to our baseline paper
+                                </li>
+                                <li>
+                                    Top-K Accuracy: Observes if the model was close to selecting 
+                                    the correct genre
+                                </li>
+                                <li>
+                                    Confusion Matrix: Effectively displays the frequency in 
+                                    which each genre is classified correctly
+                                </li>
                             </li>
                         </ul>
                     </li>
+                    <li>
+                        <b>Dataset</b>
+                        <ul>
+                            <li>The dataset used for this project was the 20k Album Covers within 
+                                20 Genres from Kaggle in which there are 1000 images per genre</li>
+                            <li>Death Metal and Doom Metal were not used to reduce significant genre 
+                                overlap with heavy metal resulting in 18k covers</li>
+                            <li>Album covers were divided into a 80/10/10 training, 
+                                validation, and testing split</li>
+                            <li>Original images were 512x512, before being cropped and resized
+                                to 224x224.
+                            </li>
+                            <li>
+                                The genres used in the study were: Blues, Country, Electronic, Hip-Hop,
+                                Lo-Fi, Psychadelic Rock, Reggae, Soul, Classical, Drum N Bass, Folk,
+                                Heavy Metal, Jazz, Pop, Rock, and Techno
+                            </li>
+                        </ul>
+                        </div>
+                        <div class="image">
+                            <img src="../images/album1.JPG" alt="album1">
+                            <img src="../images/album2.JPG" alt="album2">
+                        </div>
+                        <div class="text">  
+                            </ul>
+                    </li>
+                    <li>
+                        <b>Methods</b>
+                        <ul>
+                            <li><b>Baseline:</b> An Alexnet architecture from a previous paper 
+                            was used with data augmentation, dropout, and SGD optimization. When 
+                            running the baseline on this dataset, the accuracy was ~6%.
+                            </li>
+                            <li><b>DenseNet-201:</b>
+                                Each layer receives inputs from all prior layers which allows for 
+                                greater gradient flow and regularization on smaller dataset. We 
+                                fine-tuned the last three layers of this architecture and experimented 
+                                with different learning rate schedulers, hyperparameters, optimizers, 
+                                and regularization.
+                            </li>
+                            <li><b>ViT-B/16:</b></li> Splits images into 16-by-16 pixel patches and 
+                            feeds them into a transformer with positional encodings. We fine-tuned the 
+                            last two layers of this architecture and experimented with different 
+                            hyperparameters, optimizers, and regularization.
+                            
+                            <li><b>Loss:</b> All models employed multi-class cross entropy loss, 
+                                penalizing confident but incorrect predictions via probabilistic 
+                                interpretation.
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <b>Results and Analysis</b>
+                        <ul>
+                            <li>
+                                <b>DenseNet-201:</b>The results achieved by the DenseNet were promising. 
+                                The DenseNet achieved a top-1 accuracy of 31.44%, a top-3 accuracy of 
+                                54.72% and a top-5 accuracy of 67.00% on the test set. 
+                                The genres that the model classified the best were Classical, Grime, 
+                                and Lo-Fi. The genres the model had the worst performance with were 
+                                Electronic, Rock, Jazz, and Pop. It is worth noting that every genre 
+                                achieved a classification accuracy of at least 10%.
+                            </div>
+                            <div class="image">
+                                <img src="../images/album3.JPG" alt="album3">
+                            </div>
+                            <div class="text"> 
+                            </li>
+                            <li>
+                                <b>ViT-B/16:</b> The model that achieved the best test accuracy was the 
+                                ViT-B/16 model. To achieve this, we fine-tuned the model as well as tuned 
+                                the hyper parameters. To allow for fine-tuning, the last two encoder layers
+                                of the model were unfrozen. An AdamW optimizer was used with a learning 
+                                rate of 1e-4 betas = (0.9, 0.999), epsilon of 1e-8, and weight decay of 
+                                1e-2. We noticed that the model was outfitting the training data so we 
+                                included data augmentation(cropping, horizontal flipping, and rotation) 
+                                and dropout which was 0.7. We trained for total of 20 epochs. 
+                                ViT-B/16 achieved a top-1 accuracy of 33.00%, a top-3 accuracy of 55.06%, 
+                                and a top-5 accuracy of 66.89% on the test set. The genres that the model 
+                                classified the best were Classical, Heavy Metal, and Country. The genres 
+                                the model had the worst performance with were Rock, Pop, Electronic. 
+                                Of the 18 models classified, 15 of them achieved a classification accuracy 
+                                of at least 20% and 12 achieved an accuracy of 30%. 
+                            </div>
+                            <div class="image">
+                                <img src="../images/album4.JPG" alt="album4">
+                            </div>
+                            <div class="text"> 
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <b>Conclusion and Future Work:</b> The models achieved significant accuracy 
+                        improvements over previous work, though still struggled to classify genres 
+                        with heavy overlap with another genre and genres that exhibit a wide variety 
+                        of characteristics. For future work, more efforts should be done using 
+                        transformer based vision models, potentially with ViT L/H variants or a 
+                        SWIN model.
+                    </li>
+
             </div>
         </section>
     </main>
