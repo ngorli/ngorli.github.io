@@ -136,9 +136,13 @@ footer {
 }
 
 .video {
-    width: 60%; 
+    flex: 1;
+    text-align: center;
+    margin-top: 5px;
+}
+
+.video vid {
+    width: 80%;
     height: auto;
     max-width: 300px; 
-    display: block;
-    margin: 5px auto; 
 }
