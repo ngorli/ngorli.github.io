@@ -136,9 +136,9 @@ footer {
 }
 
 .video {
-    display: block; 
+    width: 60%; 
+    height: auto;
+    max-width: 300px; 
+    display: block;
     margin: 5px auto; 
-    width: 40%; 
-    height: auto; 
-    max-width: 100%; 
 }
