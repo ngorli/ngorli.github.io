@@ -142,9 +142,9 @@ footer {
 }
 
 .video video {
-    width: 40%;          /* Make the video take up 40% of its container's width */
-    max-width: 300px;    /* Set a maximum width to match the images */
-    height: auto;        /* Maintain aspect ratio */
-    display: block;      /* Ensure the video is a block element */
-    margin: 0 auto;      /* Center the video horizontally */
+    width: 65%;          
+    max-width: 300px;    
+    height: auto;        
+    display: block;      
+    margin: 0 auto;     
 }
