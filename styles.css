@@ -86,7 +86,7 @@ footer {
     margin-top: 5px;
 }
 
-.image_L img_L {
+.image_L img {
     width: 80%;
     height: auto;
     max-width: 600px; /* Adjust the max-width as needed */
