@@ -25,40 +25,45 @@
     <main>
         <section class="content">
             <div class="text">
-                <h2>ROS Autonomous Vehicle Project</h2>
-                <p>To gain some experience working with ROS, I created an autonomous vehicle 
-                    capable of navigating around cones. This vehicle used LiDAR to detect objects
-                    and a simple swerving algorithm to avoid cones and return back to the path. The simulation
-                    environment for this project was set up by The Construct.AI
+                <h2>ROS Autonomous Vehicle Navigation</h2>
+                <p>Autonomous Vehicle Navigation with ROS
+                    To gain hands-on experience with the Robot Operating System (ROS), I 
+                    developed an autonomous vehicle capable of navigating around cones using 
+                    advanced sensor data and control algorithms. This vehicle leveraged LiDAR 
+                    for object detection and a swerving algorithm to avoid obstacles while 
+                    maintaining its path. The simulation environment for this project was set up 
+                    by The Construct.AI, providing a realistic platform for testing and refinement.
                     <li>
                         <b>Object Detection</b>
                         </li>
                         <ul>
-                            To implement the object detection, the topic capturing the LiDAR was
-                            subscribed to. The LiDAR data was divided into three sections: front, 
-                            left, and right. The minimum distance in each of these sectors was calculated
-                            to detect the closest objects to it. If an object was detected within the minimum
-                            distance for the front LiDAR, the swerve mechanism would then be implemented.
-                            The swerving mechanism worked by comparing the minimum distances in the left and 
-                            right direction to see which side had space to swerve to. The wheel angle was then changed
-                            for a given duration of time to copmlete a swerve, before having a mirrored wheel
-                            angle to move back to the initial trajectory. This series of controls allowed the car to 
-                            detect and avoid objects in its path.
+                            The main functionality of the object detection system involved subscribing to the LiDAR data 
+                            topic. The LiDAR data was segmented into three distinct sections: front, left, and right. 
+                            For each section, the minimum distance to the nearest object was calculated. This allowed 
+                            the vehicle to detect objects in its immediate vicinity and respond accordingly.
+                            When an object was detected within the minimum distance of the front LiDAR, a swerving mechanism was 
+                            activated. This mechanism compared the minimum distances on the left and right sides to 
+                            determine which direction had sufficient space for maneuvering. The steering angle was adjusted 
+                            accordingly to perform the swerve, and after a predefined duration, the wheels were realigned to 
+                            return to the original trajectory. This approach ensured that the vehicle could effectively detect 
+                            and avoid obstacles while continuing on its path.
                         </ul>
                         <li>
-                        <b>Autonomous Driving Commands using a Control Area Network</b>  
+                        <b>Autonomous Driving Commands Using a Control Area Network (CAN)</b>  
                         </li>
                         <ul>
                             <li>
-                                The autonomous driving for this project used the dbw_mkz_msgs package which included
-                                the braking, throttle, steering and gear topics used for control. The drive-by-wire
-                                system was first enabled before the publication of topics began. Then the different    
-                                topics were published to, implementing the logic that was outlined in the prior section. 
-                                This allowed the car to drive forward and slow down as it approached objects, before
-                                adjusting steering angles to swerve around objects. To simulate a safety mechanism, a 
-                                dead mans switch protocol was also incorporated. By having a minimum input rate of 5Hz, 
-                                the vehicle would stop responindg to commands if a command was not received at this rate,
-                                handling any glitches or mistakes in the driving system.                   
+                                For autonomous driving control, the project utilized the dbw_mkz_msgs package, 
+                                which included topics for braking, throttle, steering, and gear control. 
+                                The drive-by-wire system was first enabled before publishing commands to these topics. 
+                                The logic implemented for object detection and avoidance, as described previously, was 
+                                integrated into the control commands to enable the vehicle to navigate forward, 
+                                decelerate upon approaching obstacles, and adjust steering angles to swerve around them. 
+                                In addition to basic driving commands, a safety mechanism was incorporated to ensure 
+                                reliable operation. A "Dead Man's Switch" protocol was implemented to simulate a fail-safe 
+                                system. This protocol required a minimum input rate of 5Hz; if commands were not received 
+                                at this rate, the vehicle would stop responding to inputs, handling potential glitches or 
+                                errors in the driving system.                
                             </li>
                         </ul>
                         <li>

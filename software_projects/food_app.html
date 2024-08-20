@@ -26,54 +26,82 @@
         <section class="content">
             <div class="text">
                 <h2>Recipe Sharing Social Media App</h2>
-                <p>For my group senior project for my Computer Science degree, myself and three other
-                    group members created NENA: a social media app for sharing recipes. I will cover
-                    the portions of the iOS app that I worked on.
+                <p>For my senior group project in Computer Science, my team and I developed NENA, 
+                    a social media application designed for sharing and discovering recipes. The app 
+                    was built using Firebase and React Native, providing a platform for users to 
+                    express their culinary creativity. With NENA, users can upload and share recipes, 
+                    view others' recipes, search for recipes, and connect with friends.
                     <li>
                         <b>Overview</b>
                         <ul>
-                            <li>This mobile app is an iOS application made using firebase and React
-                                Native. The motivation for NENA was to allow people to have a creative
-                                outlet to express themselves in a culinary setting. They can share and 
-                                upload recipes, view others peoples recipes, search for recipes, and add 
-                                friends on the application. 
+                            <li>NENA aims to provide a dynamic and engaging environment for 
+                                users to showcase their cooking skills and explore new recipes. 
+                                The app allows users to:
+                                <ul>
+                                    <li>
+                                        <b>Share Recipes:</b> Upload and display their favorite recipes.
+                                    </li>
+                                    <li>
+                                        <b>View Recipes:</b> Browse recipes shared by others on their friends feed.
+                                    </li>
+                                    <li>
+                                        <b>Search Recipes:</b> Find specific recipes using search functionality.
+                                    </li>
+                                    <li>
+                                        <b>Add Friends:</b> Connect with other users and interact through the app.
+                                    </li>
+                                </ul>
                             </li>
                         </ul>
                     </li>
                     <li>
-                        <b>Backend</b>
+                        <b>Backend Development</b>
                         <ul>
-                            <li>The first part of the work I did on this application was my work on
-                                the backend of the project in Firebase. This consiisted of designing 
-                                tje table heiracrhy in the backend, which was made up of recipes and users.
-                                Each user collection had fields for their DOB, cooking_level - where they could select
-                                from a list of levels - dietary restrictions, email address, first and last
-                                name, friends, friend requests, pending requests, passwords, user ids, and
-                                their profile picture url. The recipes collection contained lists for ingredients and
-                                instructions, whether or not the recipe is public, a recipe description, a recipe picture,
-                                a recipe title, a creation timestamp, and the user id.
+                            <li>In the backend, I focused on setting up the database structure in 
+                                Firebase and implementing essential functions. The backend architecture 
+                                includes:
+                                <ul>
+                                    <li>
+                                        <b>User Collection:</b> Each user has fields for date of birth 
+                                        (DOB), cooking level (selectable from predefined levels), 
+                                        dietary restrictions, email address, first and last names, 
+                                        friends list, friend requests, pending requests, passwords, 
+                                        user IDs, and profile picture URL.
+                                    </li>
+                                    <li>
+                                        <b>Recipes Collection:</b> Each recipe entry contains lists 
+                                        for ingredients and instructions, public visibility status, 
+                                        a description, a picture, a title, a creation timestamp, 
+                                        and the associated user ID.
+                                    </li>
+                                    
+                                </ul>
                             </li>
                             <li>
-                                When the backend architecture had been determined, my main task was to 
-                                work on writing the backend functions that would be called on the front end
-                                and write information to the database in Firebase. The functions I worked on
-                                were functions to handle all of the processes in relating to friends in the 
-                                application and processes used for creating a user and logging in.
+                                Key tasks I undertook included:
+                                <li>
+                                    <b>Designing the Database Schema:</b> Creating a hierarchical structure 
+                                    for users and recipes.
+                                </li>
+                                <li>
+                                    <b>Implementing Backend Functions:</b> Developing functions to 
+                                    handle friend-related processes (sending, accepting, and denying 
+                                    friend requests) and user management (creation and authentication).
+                                </li>
                             </li>
                         </ul>
                     </li>
                     <li>
-                        <b>Frontend</b>
+                        <b>Frontend Development</b>
                         <ul>
                             <li>I also did work on the frontend of the application. Below are all the screens
                                 I worked on in this application </li>
                                 <ul>
                                     <li>
-                                        <b>Home Screen</b> The home screen is the landing page when users
-                                        log in. I designed the layout of this screen as well as making it possible 
-                                        for users to see the number of friends and recipes they have, as well as 
-                                        images for their recipes. Clicking on a recipe on the home page would also redirect 
-                                        to that recipe and clicking on the numner of friends would redirect to the friends page. 
+                                        <b>Home Screen</b> The landing page for logged-in users. This screen displays 
+                                        the number of friends and recipes, along with images of the user's recipes. 
+                                        Users can click on a recipe to view its details or click on the number of 
+                                        friends to navigate to the Friends Screen. 
                                     </div>
                                     <div class="image">
                                         <img src="../images/nena1.png" alt="nena1">
@@ -81,9 +109,9 @@
                                     <div class="text">  
                                     </li>
                                     <li>
-                                        <b>Friend Screen</b> The friend screen lists the names of all of the users friends.
-                                        It also allows users to type in the name of a different user to send a freind request to as
-                                        well as accept or deny a friend request. I worked on the layout and functionality of this
+                                        <b>Friend Screen</b> Lists all the user's friends and allows users to 
+                                        search for other users to send friend requests. Users can also accept or 
+                                        deny incoming friend requests.
                                         screen.
                                     </li>
                                     </div>
@@ -93,9 +121,8 @@
                                     </div>
                                     <div class="text">  
                                     <li>
-                                        <b>Feed Screen</b> The feed screen allows users to scroll through all of the recipes
-                                        that their friends have uploaded. The recipe titile, recipe description, user, and recipe
-                                        image are all displayed. I worked on the layout and functionality of this screen.
+                                        <b>Feed Screen</b> Shows a scrollable feed of recipes uploaded by friends. 
+                                        It displays the recipe title, description, user, and image.
                                     </li>
                                     </div>
                                     <div class="image">
@@ -103,10 +130,9 @@
                                     </div>
                                     <div class="text">  
                                     <li>
-                                        <b>Search Screen</b> The search screen allows users to search for any recipes that they are 
-                                        interested in. The recipes would come up with with the recipe titile, recipe description, 
-                                        user, and recipe image. From this page, users can click on the recipe and bring up the
-                                        recipe landing page. I worked on the layout and functionality of this screen.
+                                        <b>Search Screen</b>  Enables users to search for recipes by title or description. 
+                                        The search results include the recipe title, description, user, and image. 
+                                        Users can click on a recipe to view its detailed page.
                                     </li>
                                     </div>
                                     <div class="image">
@@ -115,9 +141,8 @@
                                     </div>
                                     <div class="text">  
                                     <li>
-                                        <b>Recipe Screen</b> The recipe screen is where users can see a given recipe.
-                                        This screen includes ingredients, a picture, and step by step instructions for
-                                        how to create the recipe.
+                                        <b>Recipe Screen</b> Provides detailed information about a selected recipe, including 
+                                        ingredients, a picture, and step-by-step instructions.
                                     </li>
                                     <div class="image">
                                         <img src="../images/nena7.png" alt="nena7">

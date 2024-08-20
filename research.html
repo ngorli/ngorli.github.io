@@ -29,18 +29,49 @@
                 <div class="institution">
                     <p><a href="https://iliad.stanford.edu/">ILIAD Website</a></p>
                     <p>
-                        At Stanford, I am part of the  Intelligent and Interactive Autonomous Systems 
-                        Group (ILIAD). The lab focuses on developing algorithms for AI agents that safely and reliably interact with people, for both human-robot interaction and human-AI interaction. As an undegraduate researcher with the lab, the project I have worked on has been a joint project with Toyota Research Institute (TRI). The project has two main goals: 1. Using a skill segmentatio algorithm to 
-                        identify skills in driving and teach people how to drive. 2. Teaching people
-                        how to use and work with semi-autonomous driving systems. My tasks first
-                        consisted of setting up a simulation in CARLA to collect driving demonstrations
-                        for parallel parking and naive racing scenarios. Then I had train the skill segmoneter model, compILE, developed by my co-researcher for this project Megha Srivastava in <a href="https://arxiv.org/abs/2211.14003">this paper</a>, on the data I had collected.
+                        At Stanford, I am involved with the Intelligent and Interactive 
+                        Autonomous Systems Group (ILIAD) within Stanford Artificial 
+                        Intelligence Laboratory (SAIL), which focuses on developing 
+                        algorithms for AI agents to safely and reliably interact with 
+                        people. This research encompasses both human-robot interaction and human-AI interaction. 
+                        During my undergraduate research with the lab, I participated in a joint project with 
+                        the Toyota Research Institute (TRI). The project had two main objectives:
+                        <ol>
+                            <li>
+                                <b>Skill Segmentation in Driving: </b> Train a model to 
+                                identify and teach driving skills. The model used in this
+                                project was developed by my co-researcher for this project 
+                                Megha Srivastava in <a href="https://arxiv.org/abs/2211.14003">this paper</a>, 
+                                on the data I had collected.
+
+                            </li>
+                            <li>
+                                <b>Interaction with Semi-Autonomous Driving Systems: </b>  Educating 
+                                users on how to interact with and work with semi-autonomous driving 
+                                systems.
+                            </li>
+                        </ol>
+                        
                         <ul>
                             <li>
-                                <b>CARLA Simulation:</b>
-                                For my work in the CARLA simulation, I had to set up two different environments. The first environment I created was to give parallel parking demonstrations. First I needed to go through the different CARLA maps and find a suitable location for the demonstrations. Next, 
-                                I set up the simulation two spawn two dummy cars for the parallel parking simulation, and then created an ego car I would control for demonstration. Finally, I set up data collectiion to record my states and actions at every timestamp - 15 times a second - to be passed into the model for training. The states consisted of x, y position and rotation angle and the actions were throttle, break, steer, and gear (forward or reverse). I collected about 75 samples to be used for training compILE. Below are some images of what the demonstrations looked like.
+                                <b>CARLA Simulation Setup - Parallel Parking Demonstrations:</b>
+                                <ol>
+                                    <b>Environment Setup: </b> I explored various CARLA maps 
+                                    to identify a suitable location for parallel parking 
+                                    demonstrations. I set up the simulation to include two 
+                                    dummy cars for the parking scenario and created an ego car 
+                                    for controlled demonstrations.
+                                </ol>
+                                <ol>
+                                    <b>Data Collection: </b> Data collection was configured to 
+                                    record states and actions at 15 timestamps per second. The 
+                                    recorded states included x, y position, and rotation angle, 
+                                    while the actions recorded were throttle, brake, steer, and 
+                                    gear (forward or reverse). Approximately 75 samples were 
+                                    collected for training the model.
+                                </ol>
                             </li>
+                            </ul>
                             </div>
                             <div class="image">
                                 <img src="../images/carla1.png" alt="carla1">
@@ -48,15 +79,39 @@
                                 <img src="../images/carla3.png" alt="carla3">
                             </div>
                             <div class="text">  
-                            For the racing demonstrations, the below map was used as a rudimentary race track. The set up was the same as parallel parking and the same values were used for the state action pairings. Once again, about 75 samples were collected.
+                                <ul>
+                                    <li>
+                                        <b>CARLA Simulation Setup - Racing Demonstrations: </b>
+                                        <ol>
+                                            <b>Track Setup: </b> A  basic map was used as a rudimentary 
+                                            race track for the racing demonstrations. The setup was similar 
+                                            to that of the parallel parking simulation.
+                                        </ol>
+                                        <ol>
+                                            <b>Data Collection: </b> Similar data parameters were used, with 
+                                            about 75 samples collected for the racing scenario.
+                                        </ol>
+                                    </li>
+                                    </ul>
                             </div>
                             <div class="image">
                                 <img src="../images/carla4.png" alt="carla4">
                             </div>
                             <div class="text">  
                             <li>
-                                <b>compILE Training:</b>
-                                Once all of the data had been collected, I then had to parse all of the data I had collected and tune the hyper paramemters of the compILE model to get successful skill segmentation. I did sweeps over the various hyperparameters the model took in and was succussfel in finding skill segmentation for the racing example. The results from this skill segmentation are now being used in the continuation of work in this project.
+                                <b>compILE Model Training:</b>
+                                <ul>
+                                    <li>
+                                        I parsed the collected data to prepare it 
+                                        for model training. I had to create trajectory with rewards 
+                                        objects importing the imitation library to use with 
+                                        tensorflow and convert them to .pkl files to be used with the 
+                                        models. Through hyperparameter sweeps, I successfully achieved 
+                                        skill segmentation for the racing example. The results from 
+                                        this segmentation are now being utilized in the ongoing 
+                                        research for this project.
+                                    </li>
+                                </ul>
                                 </div>
                                 <div class="image">
                                     <img src="../images/carla5.png" alt="carla5">
@@ -66,7 +121,6 @@
                                 </div>
                                 <div class="text">  
                             </li>
-                        </ul>
                     </p>
                 </div>
             </div>
